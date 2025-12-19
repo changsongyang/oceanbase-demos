@@ -2,11 +2,13 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Layout, ConfigProvider, message, Card } from "antd";
+import { useIntl } from "react-intl";
 import DatasetIntroduction from "@/components/DatasetIntroduction";
 import ScenarioDescription from "@/components/ScenarioDescription";
 import SQLEditor from "@/components/SQLEditor";
 import ResultsPanel from "@/components/ResultsPanel";
-import { scenarios, queryTypes, type QueryType } from "@/data/scenarios";
+import { type QueryType } from "@/data/scenarios";
+import { useScenarios, useQueryTypes } from "@/hooks/useScenarios";
 
 const { Content } = Layout;
 
@@ -48,6 +50,9 @@ interface ScenarioResults {
 }
 
 export default function Home() {
+  const intl = useIntl();
+  const scenarios = useScenarios();
+  const queryTypes = useQueryTypes();
   const [activeScenario, setActiveScenario] = useState(1);
   const [activeQueryType, setActiveQueryType] = useState<QueryType>("base");
   const [hasExecuted, setHasExecuted] = useState(false);
@@ -171,7 +176,21 @@ export default function Home() {
         if (!result.success) {
           const queryLabel =
             queryTypes.find((q) => q.key === queryType)?.label || queryType;
-          const errorMsg = `${queryLabel}失败: ${result.error || "未知错误"}`;
+          const errorMsg = intl.formatMessage(
+            {
+              id: "message.queryFailed",
+              defaultMessage: "{type}失败: {error}",
+            },
+            {
+              type: queryLabel,
+              error:
+                result.error ||
+                intl.formatMessage({
+                  id: "message.queryError",
+                  defaultMessage: "查询执行失败",
+                }),
+            }
+          );
           errors.push(errorMsg);
           setError((prevError) => {
             const newErrors = prevError
@@ -252,11 +271,21 @@ export default function Home() {
 
         // 只有所有查询都成功时才显示成功消息
         if (errors.length === 0) {
-          message.success(`场景查询完成，三种查询类型已执行`);
+          message.success(
+            intl.formatMessage({
+              id: "message.queryCompleted",
+              defaultMessage: "场景查询完成，三种查询类型已执行",
+            })
+          );
         }
       } catch (error: unknown) {
         const errorMessage =
-          error instanceof Error ? error.message : "查询执行失败";
+          error instanceof Error
+            ? error.message
+            : intl.formatMessage({
+                id: "message.queryError",
+                defaultMessage: "查询执行失败",
+              });
         setError(errorMessage);
         message.error(errorMessage);
         setExecutionResults([]);
@@ -272,7 +301,7 @@ export default function Home() {
         });
       }
     },
-    [activeQueryType]
+    [activeQueryType, intl, queryTypes, scenarios]
   );
 
   // 手动执行 SQL（用于用户点击执行按钮）
@@ -406,7 +435,12 @@ export default function Home() {
                       lineHeight: "1.6",
                     }}
                   >
-                    <strong>⚠️ 查询执行错误：</strong>
+                    <strong>
+                      {intl.formatMessage({
+                        id: "message.queryExecutionError",
+                        defaultMessage: "⚠️ 查询执行错误：",
+                      })}
+                    </strong>
                     <div style={{ marginTop: 8, whiteSpace: "pre-wrap" }}>
                       {error}
                     </div>
