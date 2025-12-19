@@ -3,7 +3,7 @@ import svgPaths from "./svg-7293rn0l9g";
 function Component() {
   return (
     <div
-      className="absolute bg-[#0181fd] box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center left-[calc(50%-320px)] px-[12px] py-[5px] rounded-[4px] top-[calc(50%+302px)] translate-x-[-50%] translate-y-[-50%] w-[130px]"
+      className="absolute bg-[#0181fd] box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center left-[calc(50%-320px)] px-[12px] py-[5px] rounded-[4px] top-[calc(50%+302px)] translate-x-[-50%] translate-y-[-50%] max-w-[230px]"
       data-name="1.通用/1.按钮/2.次按钮/3.中号备份 4"
       style={{ marginTop: -24 }}
     >
@@ -141,7 +141,10 @@ function Frame5() {
 
 function Frame4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[110px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[110px] top-[560px]"
+      data-element-id="hangzhou-backup-group-state6"
+    >
       <Icon />
       <Frame5 />
     </div>

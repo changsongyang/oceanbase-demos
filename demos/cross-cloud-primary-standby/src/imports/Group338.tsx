@@ -371,7 +371,10 @@ function Frame12() {
 
 function Frame7() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[195px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[195px] top-[560px]"
+      data-element-id="shanghai-primary-group-after-creating"
+    >
       <Icon2 />
       <Frame12 />
     </div>
@@ -497,7 +500,10 @@ function Frame11() {
 
 function Frame5() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[66px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[66px] top-[560px]"
+      data-element-id="hangzhou-backup-group-after-creating"
+    >
       <Component />
       <Frame11 />
     </div>
@@ -2077,7 +2083,10 @@ export default function Group45() {
           </svg>
         </div>
       </div>
-      <div className="absolute flex inset-[65.85%_73.94%_31.71%_23.94%] items-center justify-center">
+      <div
+        className="absolute flex inset-[65.85%_73.94%_31.71%_23.94%] items-center justify-center"
+        data-element-id="arrow-to-hangzhou-backup"
+      >
         <div className="flex-none scale-y-[-100%] size-[20px]">
           <div className="relative size-full">
             <div
@@ -2104,7 +2113,10 @@ export default function Group45() {
       </div>
       <Frame5 />
       <Frame8 />
-      <div className="absolute aspect-[14/14] flex items-center justify-center left-[49.15%] right-[49.15%] top-[calc(50%+145px)] translate-y-[-50%]">
+      <div
+        className="absolute aspect-[14/14] flex items-center justify-center left-[49.15%] right-[49.15%] top-[calc(50%+145px)] translate-y-[-50%]"
+        data-element-id="arrow-to-shanghai-primary"
+      >
         <div className="flex-none rotate-[180deg] size-[16px]">
           <div className="relative size-full">
             <div className="absolute bottom-1/4 left-[8.98%] right-[8.98%] top-[3.12%]">

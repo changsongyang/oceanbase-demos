@@ -888,7 +888,10 @@ function Frame7() {
 
 function Frame4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[326px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[326px] top-[560px]"
+      data-element-id="shanghai-primary-group"
+    >
       <Icon />
       <Frame7 />
     </div>
@@ -960,7 +963,8 @@ function Group23() {
 function Alert() {
   return (
     <div
-      className="absolute bg-[#fff2f2] box-border content-stretch flex gap-[4px] h-[22px] items-center left-[298px] p-[8px] rounded-[4px] top-[522px]"
+      className="absolute bg-[#fff2f2] box-border content-stretch flex gap-[4px] items-center left-[298px] p-[8px] rounded-[4px] top-[522px]"
+      style={{ minHeight: "22px", height: "auto" }}
       data-name="alert"
     >
       <div
@@ -968,8 +972,8 @@ function Alert() {
         className="absolute border border-[#f69898] border-solid inset-0 pointer-events-none rounded-[4px]"
       />
       <Group23 />
-      <div className="flex flex-col font-['PingFang_SC:Regular',sans-serif] justify-end leading-[0] not-italic relative shrink-0 text-[#b52727] text-[12px] text-nowrap">
-        <p className="leading-[20px] whitespace-pre">上海地域出现故障</p>
+      <div className="flex flex-col font-['PingFang_SC:Regular',sans-serif] justify-end leading-[0] not-italic relative  shrink-0 text-[#b52727] text-[12px]">
+        <p className="leading-[20px]">上海地域出现故障</p>
       </div>
     </div>
   );
@@ -1094,7 +1098,10 @@ function Frame8() {
 
 function Frame6() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]"
+      data-element-id="hangzhou-backup-group-initial"
+    >
       <Icon1 />
       <Frame8 />
     </div>
@@ -1166,7 +1173,8 @@ function Group24() {
 function Alert1() {
   return (
     <div
-      className="absolute bg-[#fff2f2] box-border content-stretch flex gap-[4px] h-[22px] items-center left-[766px] p-[8px] rounded-[4px] top-[522px]"
+      className="absolute bg-[#fff2f2] box-border content-stretch flex gap-[4px] items-center left-[766px] p-[8px] rounded-[4px] top-[522px]"
+      style={{ minHeight: "22px", height: "auto" }}
       data-name="alert"
     >
       <div
@@ -1174,8 +1182,8 @@ function Alert1() {
         className="absolute border border-[#f69898] border-solid inset-0 pointer-events-none rounded-[4px]"
       />
       <Group24 />
-      <div className="flex flex-col font-['PingFang_SC:Regular',sans-serif] justify-end leading-[0] not-italic relative shrink-0 text-[#b52727] text-[12px] text-nowrap">
-        <p className="leading-[20px] whitespace-pre">上海地域出现故障</p>
+      <div className="flex flex-col font-['PingFang_SC:Regular',sans-serif] justify-end leading-[0] not-italic relative shrink-0 text-[#b52727] text-[12px]">
+        <p className="leading-[20px]">上海地域出现故障</p>
       </div>
     </div>
   );

@@ -605,7 +605,10 @@ function Frame9() {
 
 function Frame6() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[110px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[110px] top-[560px]"
+      data-element-id="hangzhou-backup-group-switching"
+    >
       <Icon2 />
       <Frame9 />
     </div>

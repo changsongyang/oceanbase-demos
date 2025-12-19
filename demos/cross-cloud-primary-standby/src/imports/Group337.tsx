@@ -44,12 +44,12 @@ function Alert() {
 function Component() {
   return (
     <div
-      className="absolute bg-[#0181fd] box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center left-[calc(50%-320px)] px-[12px] py-[5px] rounded-[4px] top-[calc(50%+302px)] translate-x-[-50%] translate-y-[-50%] w-[130px] cursor-pointer hover:bg-[#0066cc] transition-colors"
+      className="absolute bg-[#0181fd] box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center left-[calc(50%-320px)] px-[12px] py-[5px] rounded-[4px] top-[calc(50%+302px)] translate-x-[-50%] translate-y-[-50%] max-w-[230px] cursor-pointer hover:bg-[#0066cc] transition-colors"
       data-name="1.通用/1.按钮/2.次按钮/3.中号备份 4"
       style={{ marginTop: -24 }}
     >
-      <div className="flex flex-col font-['PingFang_SC:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white">
-        <p className="leading-[22px] whitespace-pre">创建跨云主备库</p>
+      <div className="flex flex-col font-['PingFang_SC:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-center text-white">
+        <p className="leading-[22px]">创建跨云主备库</p>
       </div>
     </div>
   );
@@ -172,7 +172,10 @@ function Icon() {
 
 function Frame7() {
   return (
-    <div className="content-stretch flex flex-col gap-[4px] items-center relative shrink-0">
+    <div
+      className="content-stretch flex flex-col gap-[4px] items-center relative shrink-0"
+      data-element-id="shanghai-backup-label"
+    >
       <p className="font-['PingFang_SC:Medium',sans-serif] leading-[22px] not-italic relative shrink-0 text-[#191919] text-[14px] text-center text-nowrap tracking-[-0.1504px] whitespace-pre">
         上海备实例
       </p>
@@ -308,7 +311,10 @@ function Frame8() {
 
 function Frame5() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]"
+      data-element-id="shanghai-backup-group-recovered"
+    >
       <Icon1 />
       <Frame8 />
     </div>
@@ -434,7 +440,10 @@ function Frame9() {
 
 function Frame6() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[110px] top-[560px]">
+    <div
+      className={`absolute content-stretch flex flex-col gap-[16px] items-center left-[110px] top-[560px]`}
+      data-element-id="hangzhou-backup-group"
+    >
       <Icon2 />
       <Frame9 />
     </div>
@@ -1631,6 +1640,7 @@ function Component01Button1() {
     <div
       className="absolute bg-white box-border content-stretch flex gap-[8px] items-center justify-center left-[320px] px-[16px] py-[9px] rounded-[4px] top-[692px] cursor-pointer hover:bg-[#f5f7fa] transition-colors"
       data-name="01-按钮Button"
+      data-button-id="region-recovery-create-button"
     >
       <div
         aria-hidden="true"
@@ -1648,6 +1658,7 @@ function Component01Button2() {
     <div
       className="absolute bg-white box-border content-stretch flex gap-[8px] items-center justify-center left-[790px] px-[16px] py-[9px] rounded-[4px] top-[692px] cursor-pointer hover:bg-[#f5f7fa] transition-colors"
       data-name="01-按钮Button"
+      data-button-id="region-failure-release-button"
     >
       <div
         aria-hidden="true"

@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useIntl } from "react-intl";
 import Group327 from "../imports/Group327";
 import Group328 from "../imports/Group328";
 import Group329 from "../imports/Group329";
+import { useTextReplacer } from "../hooks/useTextReplacer";
 
 type PrimaryBackupState = "initial" | "afterSwitch" | "final";
 
@@ -12,7 +14,12 @@ interface PrimaryBackupSwitchProps {
 export default function PrimaryBackupSwitch({
   resetTrigger,
 }: PrimaryBackupSwitchProps) {
+  const intl = useIntl();
   const [state, setState] = useState<PrimaryBackupState>("initial");
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // 使用文本替换 Hook 来国际化 imports 组件中的文案
+  useTextReplacer(containerRef);
 
   // 当 resetTrigger 改变时，重置状态
   useEffect(() => {
@@ -112,7 +119,7 @@ export default function PrimaryBackupSwitch({
         <button
           onClick={() => setState("initial")}
           className="bg-white box-border content-stretch flex gap-[8px] items-center justify-center p-[6px] rounded-[6px] size-[32px] border-[#cdd5e4] border border-solid hover:bg-[#f5f7fa] hover:border-[#a0aec0] transition-all overflow-hidden cursor-pointer group"
-          title="重置"
+          title={intl.formatMessage({ id: "common.reset" })}
         >
           <svg
             className="w-4 h-4"
@@ -148,7 +155,11 @@ export default function PrimaryBackupSwitch({
         </button>
       </div>
 
-      <div onClick={handleStateChange}>
+      <div
+        onClick={handleStateChange}
+        ref={containerRef}
+        className="en-scale-container"
+      >
         {/* 响应式容器 */}
         <div
           className="relative w-full"

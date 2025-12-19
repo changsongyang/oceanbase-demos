@@ -119,7 +119,10 @@ function Frame5() {
 
 function Frame4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]"
+      data-element-id="hangzhou-backup-group-state6-main"
+    >
       <Icon />
       <Frame5 />
     </div>
@@ -129,7 +132,7 @@ function Frame4() {
 function Component() {
   return (
     <div
-      className="absolute bg-[#0181fd] box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center left-[calc(50%+364px)] px-[12px] py-[5px] rounded-[4px] top-[calc(50%+302px)] translate-x-[-50%] translate-y-[-50%] w-[130px] cursor-pointer hover:bg-[#0066cc] transition-colors"
+      className="absolute bg-[#0181fd] box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center left-[calc(50%+364px)] px-[12px] py-[5px] rounded-[4px] top-[calc(50%+302px)] translate-x-[-50%] translate-y-[-50%] max-w-[230px] cursor-pointer hover:bg-[#0066cc] transition-colors"
       data-name="1.通用/1.按钮/2.次按钮/3.中号备份 4"
       data-button-id="vendor-state6-button1"
       style={{ marginTop: -24 }}
@@ -1395,6 +1398,7 @@ function Alert() {
     <div
       className="absolute bg-[#f5faf8] box-border content-stretch flex gap-[4px] h-[22px] items-center left-[110px] p-[8px] rounded-[4px] top-[431px]"
       data-name="alert"
+      data-element-id="cloud-vendor-a-recovered-alert-state6"
     >
       <div
         aria-hidden="true"

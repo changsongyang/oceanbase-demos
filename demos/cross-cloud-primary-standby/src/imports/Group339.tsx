@@ -299,7 +299,10 @@ function Frame7() {
 
 function Frame4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[326px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[326px] top-[560px]"
+      data-element-id="shanghai-primary-group-after-releasing"
+    >
       <Icon />
       <Frame7 />
     </div>
@@ -425,7 +428,10 @@ function Frame8() {
 
 function Frame5() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[110px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[110px] top-[560px]"
+      data-element-id="hangzhou-backup-group-after-releasing"
+    >
       <Component />
       <Frame8 />
     </div>

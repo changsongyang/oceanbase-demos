@@ -119,7 +119,10 @@ function Frame5() {
 
 function Frame4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]"
+      data-element-id="hangzhou-backup-group-state3"
+    >
       <Icon />
       <Frame5 />
     </div>
@@ -129,9 +132,10 @@ function Frame4() {
 function Component() {
   return (
     <div
-      className="absolute bg-[#0181fd] box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center left-[calc(50%+364px)] px-[12px] py-[5px] rounded-[4px] top-[calc(50%+302px)] translate-x-[-50%] translate-y-[-50%] w-[130px] cursor-pointer hover:bg-[#0066cc] transition-colors"
+      className="absolute bg-[#0181fd] box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center left-[calc(50%+364px)] px-[12px] py-[5px] rounded-[4px] top-[calc(50%+302px)] translate-x-[-50%] translate-y-[-50%] max-w-[230px] cursor-pointer hover:bg-[#0066cc] transition-colors"
       data-name="1.通用/1.按钮/2.次按钮/3.中号备份 4"
       data-button-id="vendor-state3-button1"
+      data-element-id="vendor-state3-create-button"
       style={{ marginTop: -24 }}
     >
       <div className="flex flex-col font-['PingFang_SC:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white">
@@ -1463,7 +1467,7 @@ function Frame8() {
 function Component01Button1() {
   return (
     <div
-      className="bg-white relative rounded-[4px] shrink-0 w-full cursor-pointer hover:bg-[#f5f7fa] transition-colors"
+      className="bg-white relative rounded-[4px] shrink-0 max-w-[230px] cursor-pointer hover:bg-[#f5f7fa] transition-colors"
       data-name="01-按钮Button"
       data-button-id="vendor-state3-button2"
     >
@@ -1620,7 +1624,7 @@ function Frame9() {
 function Component01Button2() {
   return (
     <div
-      className="bg-white relative rounded-[4px] shrink-0 w-full cursor-pointer hover:bg-[#f5f7fa] transition-colors"
+      className="bg-white relative rounded-[4px] shrink-0 max-w-[230px] cursor-pointer hover:bg-[#f5f7fa] transition-colors"
       data-name="01-按钮Button"
       data-button-id="vendor-state3-button3"
     >
@@ -1709,6 +1713,7 @@ function Alert() {
     <div
       className="absolute bg-[#f5faf8] box-border content-stretch flex gap-[4px] h-[22px] items-center left-[110px] p-[8px] rounded-[4px] top-[431px]"
       data-name="alert"
+      data-element-id="cloud-vendor-a-recovered-alert"
     >
       <div
         aria-hidden="true"

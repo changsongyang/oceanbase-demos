@@ -1702,7 +1702,7 @@ export default function Group46() {
         </div>
         <p
           className="absolute font-['PingFang_SC:Medium',sans-serif] leading-[22px] not-italic text-[#191919] text-[14px] whitespace-nowrap bg-white px-1 left-1/2 -translate-x-1/2"
-          style={{ marginLeft: -70 }}
+          style={{ marginLeft: -90, zIndex: 10 }}
         >
           网络连接
         </p>

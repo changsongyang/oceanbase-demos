@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useIntl as useReactIntl } from "react-intl";
 import Group330 from "../imports/Group330";
 import Group331 from "../imports/Group331";
 import Group332 from "../imports/Group332";
@@ -7,6 +8,7 @@ import Group334 from "../imports/Group334";
 import Group338 from "../imports/Group338";
 import Group340 from "../imports/Group340";
 import RegionFailure from "./RegionFailure";
+import { useTextReplacer } from "../hooks/useTextReplacer";
 
 type VendorFailureState =
   | "state1"
@@ -19,9 +21,14 @@ type VendorFailureState =
 type DisasterScenario = "cloud-failure" | "region-failure";
 
 export default function DisasterRecovery() {
+  const intl = useReactIntl();
   const [scenario, setScenario] = useState<DisasterScenario>("cloud-failure");
   const [state, setState] = useState<VendorFailureState>("state1");
   const [resetTrigger, setResetTrigger] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // 使用文本替换 Hook 来国际化 imports 组件中的文案
+  useTextReplacer(containerRef);
 
   // 当进入state2时，2秒后自动切换到state3
   useEffect(() => {
@@ -169,7 +176,7 @@ export default function DisasterRecovery() {
                   : "text-[#132039] font-normal"
               }`}
             >
-              云服务商故障
+              {intl.formatMessage({ id: "scenario.cloudFailure" })}
             </p>
           </button>
           {/* 右侧按钮 - 地域故障 */}
@@ -197,7 +204,7 @@ export default function DisasterRecovery() {
                   : "text-[#132039] font-normal"
               }`}
             >
-              地域故障
+              {intl.formatMessage({ id: "scenario.regionFailure" })}
             </p>
           </button>
         </div>
@@ -208,7 +215,7 @@ export default function DisasterRecovery() {
             setResetTrigger((prev) => prev + 1);
           }}
           className="bg-white box-border content-stretch flex gap-[8px] items-center justify-center p-[6px] rounded-[6px] size-[32px] border-[#cdd5e4] border border-solid hover:bg-[#f5f7fa] hover:border-[#a0aec0] transition-all overflow-hidden cursor-pointer group"
-          title="重置"
+          title={intl.formatMessage({ id: "common.reset" })}
         >
           <svg
             className="w-4 h-4"
@@ -246,7 +253,11 @@ export default function DisasterRecovery() {
 
       {/* 根据场景显示不同的内容 */}
       {scenario === "cloud-failure" ? (
-        <div onClick={handleStateChange}>
+        <div
+          onClick={handleStateChange}
+          ref={containerRef}
+          className="en-scale-container"
+        >
           {/* 响应式容器 */}
           <div
             className="relative w-full"

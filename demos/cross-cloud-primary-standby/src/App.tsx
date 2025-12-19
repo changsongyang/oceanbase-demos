@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { FormattedMessage } from "react-intl";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import PrimaryBackupSwitch from "./components/PrimaryBackupSwitch";
@@ -187,7 +188,7 @@ export default function App() {
                       : "text-[#8C8C8C] hover:text-[#595959]"
                   }`}
                 >
-                  主备切换
+                  <FormattedMessage id="tab.primaryBackup" />
                   {activeTab === "primary-backup" && (
                     <div className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-[#0958D9]" />
                   )}
@@ -200,7 +201,7 @@ export default function App() {
                       : "text-[#8C8C8C] hover:text-[#595959]"
                   }`}
                 >
-                  容灾切换
+                  <FormattedMessage id="tab.disasterRecovery" />
                   {activeTab === "disaster" && (
                     <div className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-[#0958D9]" />
                   )}
@@ -235,6 +236,246 @@ export default function App() {
         .cloud-failure-state1 [data-name="Group"] {
           margin-top: -2px;
           margin-bottom: 2px;
+        }
+
+        /* ========== 英文版本样式优化 ========== */
+        
+        /* 英文版本适度缩小字体 - 让布局更舒适 */
+        html[lang="en-US"] {
+          --font-scale: 0.97;
+        }
+
+        /* 英文版本 SVG 内容区域的所有文本元素 */
+        html[lang="en-US"] .en-scale-container * {
+          font-size: calc(1em * var(--font-scale, 1)) !important;
+        }
+
+        /* 防止切换 tab 时闪烁 */
+        .i18n-loading {
+          opacity: 0;
+        }
+        .i18n-ready {
+          opacity: 1;
+          transition: opacity 0.15s ease-in;
+        }
+
+        /* ========== 修复英文版本布局问题 ========== */
+        
+        /* 修复提示框文本换行 - 允许文本自动换行，防止超出边界 */
+        html[lang="en-US"] [data-name="alert"] {
+          max-width: 230px !important;
+          width: auto !important;
+          white-space: normal !important;
+          padding: 6px 8px !important;
+          height: auto !important;
+          min-height: 22px !important;
+        }
+
+        /* 提示框内的文本允许换行 */
+        html[lang="en-US"] [data-name="alert"] p {
+          white-space: normal !important;
+          word-wrap: break-word !important;
+          word-break: break-word !important;
+          line-height: 18px !important;
+        }
+
+        /* 提示框内的 flex 容器也要允许换行 */
+        html[lang="en-US"] [data-name="alert"] > div:last-child {
+          white-space: normal !important;
+        }
+
+        html[lang="en-US"] [data-name="alert"] {
+          margin-left: -40px !important;  // 向左移动 40px
+        }
+
+        /* 调整"释放实例"按钮位置 - 向左移动 20px */
+        html[lang="en-US"] [data-button-id="region-failure-release-button"] {
+          margin-left: -40px !important;
+        }
+
+        /* 调整杭州备份实例组位置 - 向左移动 20px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整上海备实例标签位置 - 向左移动 10px */
+        html[lang="en-US"] [data-element-id="shanghai-backup-label"] {
+          margin-left: -10px !important;
+        }
+
+        /* 调整"释放实例"按钮位置（恢复状态） - 向左移动 10px */
+        html[lang="en-US"] [data-button-id="region-recovery-create-button"] {
+          margin-left: -10px !important;
+        }
+
+        /* 调整上海主实例组位置 - 向左移动 20px */
+        html[lang="en-US"] [data-element-id="shanghai-primary-group"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整杭州备份实例组位置（state6）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-state6"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整杭州备份实例组位置（switching）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-switching"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整"释放实例"按钮位置（afterCreating状态）- 向左移动 20px */
+        html[lang="en-US"] [data-button-id="vendor-state3-alt-button1"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整上海主实例组位置（afterReleasing状态）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="shanghai-primary-group-after-releasing"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整上海主实例组位置（afterCreating状态）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="shanghai-primary-group-after-creating"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整杭州备份实例组位置（afterCreating状态）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-after-creating"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整箭头位置以对齐杭州备份实例 - 向左移动 20px */
+        html[lang="en-US"] [data-element-id="arrow-to-hangzhou-backup"] {
+          margin-top: -70px !important;
+        }
+
+        /* 调整杭州备份实例组位置（afterReleasing状态）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-after-releasing"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整上海备份实例组位置（recovered状态）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="shanghai-backup-group-recovered"] {
+          margin-left: -20px !important;
+        }
+
+        /* 调整箭头位置以对齐上海主实例（afterCreating状态）- 向上移动 80px */
+        html[lang="en-US"] [data-element-id="arrow-to-shanghai-primary"] {
+          margin-top: -25px !important;
+          margin-left: -2px !important;
+        }
+
+        /* 英文版本：调整云服务商 A 故障提示框位置 - 向右移动 30px */
+        html[lang="en-US"] [data-element-id="cloud-vendor-a-failure-alert"] {
+ 
+          margin-left: 45px !important;
+          margin-top: -5px !important;
+        }
+
+        /* 英文版本：调整上海主实例组位置（vendor-state1）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="shanghai-primary-group-vendor-state1"] {
+          margin-left: -15px !important;
+        }
+
+        /* 英文版本：调整云服务商 A 恢复正常提示框位置 - 向右移动 45px 向上移动 5px */
+        html[lang="en-US"] [data-element-id="cloud-vendor-a-recovered-alert"] {
+          margin-left: 45px !important;
+          margin-top: -5px !important;
+        }
+
+        /* 英文版本：调整云服务商 A 恢复正常提示框位置（state6）- 向右移动 45px 向上移动 5px */
+        html[lang="en-US"] [data-element-id="cloud-vendor-a-recovered-alert-state6"] {
+          margin-left: 45px !important;
+          margin-top: -5px !important;
+        }
+
+        /* 调整"创建跨云主备库"按钮位置（state6）- 向左移动 20px */
+        html[lang="en-US"] [data-button-id="vendor-state6-button1"] {
+          margin-left: -20px !important;
+        }
+
+        /* 英文版本：调整杭州备份实例组位置（state6-main）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-state6-main"] {
+          margin-left: -15px !important;
+        }
+
+        /* 英文版本：调整云服务商 A 出现故障提示框位置（state2）- 向右移动 45px 向上移动 5px */
+        html[lang="en-US"] [data-element-id="cloud-vendor-a-failure-alert-state2"] {
+          margin-left: 45px !important;
+          margin-top: -5px !important;
+        }
+
+        /* 英文版本：调整杭州备份实例组位置（state3）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-state3"] {
+          margin-left: -15px !important;
+        }
+
+        /* 英文版本：调整"创建跨云主备库"按钮位置（state3）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="vendor-state3-create-button"] {
+          margin-left: -20px !important;
+        }
+
+        /* 英文版本：调整"释放实例"按钮最大宽度（state4）- 230px */
+        html[lang="en-US"] [data-button-id="vendor-state4-button1"],
+        html[lang="en-US"] [data-button-id="vendor-state4-button2"] {
+          max-width: 230px !important;
+        }
+
+        html[lang="zh-CN"] [data-button-id="vendor-state4-button1"],
+        html[lang="zh-CN"] [data-button-id="vendor-state4-button2"] {
+          max-width: 80px !important;
+        }
+
+        /* 英文版本：调整上海主实例组位置（state5）- 向左移动 20px */
+        html[lang="en-US"] [data-element-id="shanghai-primary-group-state5"] {
+          margin-left: -20px !important;
+        }
+
+        /* 英文版本：调整杭州备份实例组位置（state5）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-state5"] {
+          margin-left: -15px !important;
+        }
+
+        /* 英文版本：调整杭州备份实例组位置（state2）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-state2"] {
+          margin-left: -15px !important;
+        }
+
+        /* 英文版本：调整杭州备份实例组位置（state4）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-state4"] {
+          margin-left: -15px !important;
+        }
+
+        /* 英文版本：调整"释放实例"按钮位置（state4）- 向左移动 15px */
+        html[lang="en-US"] [data-button-id="vendor-state4-button1"] {
+          margin-left: -15px !important;
+        }
+
+        /* 英文版本：调整杭州备份实例组（含按钮）位置（state4）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-with-button-state4"] {
+          margin-top: 20px !important;
+          margin-left: -25px !important;
+        }
+
+        /* 英文版本：调整上海主实例组（含按钮）位置（state4）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="shanghai-primary-with-button-state4"] {
+          margin-top: 20px !important;
+          margin-left: -10px !important;
+        }
+
+        /* 英文版本：调整杭州备份实例组位置（initial）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="hangzhou-backup-group-initial"] {
+          
+          margin-left: -15px !important;
+        }
+
+        /* 英文版本：调整上海备份实例组位置（state4）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="shanghai-backup-group-state4"] {
+          margin-left: -10px !important;
+        }
+
+        /* 英文版本：调整上海主实例组位置（state4-main）- 向左移动 15px */
+        html[lang="en-US"] [data-element-id="shanghai-primary-group-state4-main"] {
+          margin-left: -20px !important;
         }
       `}</style>
       </div>

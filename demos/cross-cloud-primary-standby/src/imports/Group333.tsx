@@ -119,7 +119,10 @@ function Frame8() {
 
 function Frame5() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[402px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[402px] top-[560px]"
+      data-element-id="shanghai-backup-group-state4"
+    >
       <Component />
       <Frame8 />
     </div>
@@ -245,7 +248,10 @@ function Frame9() {
 
 function Frame13() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[290px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[290px] top-[560px]"
+      data-element-id="shanghai-primary-group-state4-main"
+    >
       <Component1 />
       <Frame9 />
     </div>
@@ -1658,7 +1664,10 @@ function Frame7() {
 
 function Frame11() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full">
+    <div
+      className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full"
+      data-element-id="hangzhou-backup-group-state4"
+    >
       <Icon1 />
       <Frame7 />
     </div>
@@ -1689,7 +1698,13 @@ function Component01Button() {
 
 function Frame14() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[62px] top-[560px] w-[88px]">
+    <div
+      style={{
+        width: 130,
+      }}
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[62px] top-[560px] w-[88px]"
+      data-element-id="hangzhou-backup-with-button-state4"
+    >
       <Frame11 />
       <Component01Button />
     </div>
@@ -1846,7 +1861,13 @@ function Component01Button1() {
 
 function Frame15() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[174px] top-[560px] w-[88px]">
+    <div
+      style={{
+        width: 130,
+      }}
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[174px] top-[560px] w-[88px]"
+      data-element-id="shanghai-primary-with-button-state4"
+    >
       <Frame12 />
       <Component01Button1 />
     </div>

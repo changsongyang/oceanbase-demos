@@ -209,7 +209,10 @@ function Frame8() {
 
 function Frame5() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[326px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[326px] top-[560px]"
+      data-element-id="shanghai-primary-group-state5"
+    >
       <Component />
       <Frame8 />
     </div>
@@ -335,7 +338,10 @@ function Frame7() {
 
 function Frame4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]"
+      data-element-id="hangzhou-backup-group-state5"
+    >
       <Icon />
       <Frame7 />
     </div>

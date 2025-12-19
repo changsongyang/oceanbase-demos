@@ -673,7 +673,10 @@ function Frame6() {
 
 function Frame4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[326px] top-[590px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[326px] top-[590px]"
+      data-element-id="shanghai-primary-group-vendor-state1"
+    >
       <Icon />
       <Frame6 />
     </div>
@@ -1030,6 +1033,7 @@ function Alert() {
     <div
       className="absolute bg-[#fff2f2] box-border content-stretch flex gap-[4px] h-[22px] items-center left-[110px] p-[8px] rounded-[4px] top-[461px]"
       data-name="alert"
+      data-element-id="cloud-vendor-a-failure-alert"
     >
       <div
         aria-hidden="true"

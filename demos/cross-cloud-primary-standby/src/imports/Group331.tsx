@@ -873,6 +873,7 @@ function Alert() {
     <div
       className="absolute bg-[#fff2f2] box-border content-stretch flex gap-[4px] h-[22px] items-center left-[110px] p-[8px] rounded-[4px] top-[431px]"
       data-name="alert"
+      data-element-id="cloud-vendor-a-failure-alert-state2"
     >
       <div
         aria-hidden="true"
@@ -1010,7 +1011,10 @@ function Frame8() {
 
 function Frame5() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]">
+    <div
+      className="absolute content-stretch flex flex-col gap-[16px] items-center left-[794px] top-[560px]"
+      data-element-id="hangzhou-backup-group-state2"
+    >
       <Icon2 />
       <Frame8 />
     </div>
